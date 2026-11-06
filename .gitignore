@@ -1,0 +1,34 @@
+# Python 虚拟环境
+.venv/
+venv/
+env/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+
+# PyInstaller 构建中间产物与打包结果
+build/
+dist/
+
+# 运行时数据：含本机路径与 API Key，禁止提交
+config.ini
+processed_state.json
+logs/
+*.log
+
+# 编辑器与工具临时目录
+.trae/
+.workbuddy/
+.uploads/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 备份与系统临时文件
+*.bak
+*.old
+* - 复制*
+Thumbs.db
+.DS_Store

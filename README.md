@@ -65,10 +65,17 @@ python main.py
 
 **打包为单文件 exe**
 
+`requirements.txt` 只列运行期依赖，不包含打包工具本身。打包需额外安装 `pyinstaller` 与构建期依赖 `pillow`——后者只用于把 `icon.png` 转成 ICO 图标，运行时不依赖它：
+
 ```bash
-pip install pyinstaller
+# 构建期依赖（pillow 仅用于图标转换）
+pip install pyinstaller pillow
+
+# 按 spec 打包
 pyinstaller TinyPNG_Pro.spec
 ```
+
+漏装 `pillow` 时，PyInstaller 会中断并报 `Received icon image ... which exists but is not in the correct format`。
 
 产物为 `dist/` 下的 `TinyPNG Pro.exe`，双击即可运行，目标机器无需安装 Python。`config.ini`、`processed_state.json` 与 `logs/` 会生成在 exe 同目录。
 
